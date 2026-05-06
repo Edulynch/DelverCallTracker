@@ -1,0 +1,14 @@
+## Interface: 120005
+## Title: Delver Call Tracker
+## Notes: Tracks Delver's Call - Midnight storyline quests
+## Version: 1.0
+## Author: Eduardo Lynch Araya
+## OptionalDeps: TomTom
+## SavedVariables: DelverCallTrackerDB, DCT_Config
+
+Core/Data.lua
+Core/Locales.lua
+Core/Waypoints.lua
+Core/UI.lua
+Core/Settings.lua
+Core/Main.lua
