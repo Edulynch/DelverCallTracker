@@ -248,6 +248,11 @@ local function CreateIconButton(parent, texturePath, tooltipText, onClick)
     return button
 end
 
+local function ShouldHideAtPlayerLevel()
+    local level = UnitLevel and UnitLevel("player") or 0
+    return DCT.GetUiConfig().hideAtLevel90 and type(level) == "number" and level >= 90
+end
+
 local function SetRowHighlighted(row, highlighted)
     if not row or not row.selectionBorder then
         return
@@ -697,6 +702,11 @@ end
 
 function DCT.ApplyStartupVisibility()
     if not frame then
+        return
+    end
+
+    if ShouldHideAtPlayerLevel() then
+        frame:Hide()
         return
     end
 

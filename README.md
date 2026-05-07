@@ -1,116 +1,80 @@
-# DelverCallTracker
+# Delver Call Tracker
 
-A Lua-based addon designed to track and manage Delver-related calls and events.
+![Delver Call Tracker logo](Assets/logo.svg)
 
----
+**Delver Call Tracker** is a compact World of Warcraft: Midnight addon that helps you follow the **Delver's Call** questline without wasting time checking the quest log, looking for delve entrances, or remembering where to turn quests in.
 
-## 📄 Description
+## What It Does
 
-`DelverCallTracker` is a World of Warcraft addon currently in development, focused on tracking and monitoring Delver-related progression and activities.
+- Tracks all 10 **Delver's Call - Midnight** quests.
+- Splits progress into clear filters: not taken, in progress, completed, and turned in.
+- Creates direct waypoints with TomTom or the native game waypoint system.
+- Includes practical routes between Silvermoon, Isle of Quel'Danas, Harandar, and Voidstorm.
+- Marks delve entrances and known turn-in locations.
+- Remembers the active filter, highlighted row, and current route after reload.
+- Can hide in combat, use mouseover autohide, and stay hidden automatically on level 90 characters.
 
-It is recommended to start using the addon at level **87** to ensure optimal progression tracking through level **90**.
+## Quick Flow
 
----
+Open the panel, choose a filter, click a quest, and the addon marks your next destination. If you have already finished the progression on a level 90 character, the panel will not reopen automatically after reload/relog unless you disable that option.
 
-## 📦 Project Structure
+## Commands
+
+| Command | Action |
+| --- | --- |
+| `/dcall` | Open or toggle the tracker |
+| `/dct` | Short tracker alias |
+| `/delverscall` | Long tracker alias |
+| `/delvercalltracker` | Full tracker alias |
+| `/dcall settings` | Open addon settings |
+| `/dcall show` | Show the panel |
+| `/dcall hide` | Hide the panel |
+| `/dcall toggle` | Toggle the panel |
+| `/dcall combat enable\|disable` | Enable or disable hide in combat |
+| `/dcall autohide enable\|disable` | Enable or disable mouseover autohide |
+
+## Options
+
+- **Language:** automatic based on the client, English, or Spanish.
+- **Hide in combat:** hides the tracker while you are in combat.
+- **Autohide:** only shows the tracker while your mouse is over it.
+- **Hide at level 90:** enabled by default. If your character is level 90 or higher, the panel stays hidden automatically after the next reload/relog. You can still open it manually at any time.
+- **Appearance:** font size, width, row height, scale, and status colors.
+
+## Installation
+
+1. Download or clone this repository.
+2. Place the `DelverCallTracker` folder in `World of Warcraft/_retail_/Interface/AddOns/`.
+3. Restart the game or run `/reload`.
+4. Use `/dcall` to open the tracker.
+
+## Recommended
+
+- **TomTom** is optional, but recommended for a better arrow and waypoint experience.
+- Start using the addon around level **87** to keep Delver's Call progression aligned through level **90**.
+- If you do not use TomTom, the addon tries to create waypoints with Retail's native tools.
+
+## Project Structure
 
 ```text
 DelverCallTracker/
+├── Assets/
 ├── Core/
 ├── DelverCallTracker.toc
 ├── CHANGELOG.md
-└── LICENSE
+├── LICENSE
+├── README.md
+└── README_CURSEFORGE.md
 ```
 
----
+## Contributions
 
-## 🛠️ Technologies
+Bug reports, feature requests, and pull requests are welcome through GitHub issues and PRs.
 
-* Lua
+## License
 
----
+MIT License. Copyright (c) 2026 Eduardo Lynch Araya.
 
-## 🚀 Installation
+## Credits
 
-Clone the repository:
-
-```bash
-git clone https://github.com/Edulynch/DelverCallTracker.git
-```
-
-Place the addon folder inside your World of Warcraft addons directory:
-
-```text
-World of Warcraft/_retail_/Interface/AddOns/
-```
-
----
-
-## 📈 Recommended Usage
-
-For the best experience, it is recommended to begin using the addon starting at level **87**, allowing progression tracking to align properly up to level **90**.
-
----
-
-## 🤝 Contributions
-
-Contributions are welcome.
-
-### 🐞 Bug Reports & Feature Requests
-
-If you find a bug or want to request a feature/improvement, please open an Issue in the repository.
-
-When creating an issue, try to include:
-
-* Clear description of the problem/request
-* Steps to reproduce (if applicable)
-* Screenshots or logs (if available)
-* WoW version and addon version
-
----
-
-### 🔧 Pull Requests
-
-Pull Requests are welcome for fixes, improvements, and new features.
-
-Please make sure your PR includes:
-
-* A clear description of the changes made
-* The reason for the change
-* Instructions on how to test the changes
-* Screenshots/videos if UI behavior changed
-
-Example:
-
-```text
-### Changes
-- Added new Delver tracking event
-- Improved level progression calculation
-
-### Testing
-1. Login with a level 87+ character
-2. Complete a Delver event
-3. Verify tracking updates correctly
-```
-
----
-
-## 📌 Project Status
-
-🚧 Currently in development
-
----
-
-## 📜 License
-
-MIT License
-
-Copyright (c) 2026 Eduardo Lynch Araya
-
----
-
-## 👨‍💻 Author
-
-Eduardo Lynch Araya
-
-GitHub: https://github.com/Edulynch
+Created by **Eduardo Lynch Araya**. UI style inspired by **Myu's Knowledge Points Tracker**.

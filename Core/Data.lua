@@ -66,6 +66,7 @@ DCT.DEFAULT_CONFIG = {
         scale = 1,
         activeTabKey = "not_started",
         hideInCombat = false,
+        hideAtLevel90 = true,
         autohide = false,
         colors = {
             pending = "FFFF8000",

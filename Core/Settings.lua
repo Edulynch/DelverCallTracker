@@ -86,6 +86,24 @@ function DCT.RegisterSettings()
         Settings.CreateCheckbox(category, setting, L("AUTOHIDE_TIP"))
     end
 
+    do
+        local setting = Settings.RegisterProxySetting(
+            category,
+            "DCT_HideAtLevel90",
+            Settings.VarType.Boolean,
+            L("HIDE_AT_LEVEL_90"),
+            DCT.DEFAULT_CONFIG.ui.hideAtLevel90,
+            function() return DCT.GetUiConfig().hideAtLevel90 end,
+            function(value)
+                DCT.GetUiConfig().hideAtLevel90 = value
+                if not value then
+                    DCT.ApplyStartupVisibility()
+                end
+            end
+        )
+        Settings.CreateCheckbox(category, setting, L("HIDE_AT_LEVEL_90_TIP"))
+    end
+
     appearanceLayout:AddInitializer(CreateSettingsListSectionHeaderInitializer(L("SETTINGS_APPEARANCE")))
 
     local function CreateSlider(variableName, labelKey, tooltipKey, defaultValue, minValue, maxValue, step, getter, setter, formatter)

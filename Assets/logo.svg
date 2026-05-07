@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Delver Call Tracker Logo</title>
+  <desc id="desc">A glowing compass over a delve doorway with cyan and gold accents.</desc>
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="38%" r="70%">
+      <stop offset="0%" stop-color="#123b5f"/>
+      <stop offset="48%" stop-color="#071827"/>
+      <stop offset="100%" stop-color="#02060d"/>
+    </radialGradient>
+    <linearGradient id="gold" x1="18%" y1="12%" x2="82%" y2="88%">
+      <stop offset="0%" stop-color="#fff2a3"/>
+      <stop offset="46%" stop-color="#d9a51d"/>
+      <stop offset="100%" stop-color="#7c4d00"/>
+    </linearGradient>
+    <linearGradient id="cyan" x1="20%" y1="20%" x2="80%" y2="80%">
+      <stop offset="0%" stop-color="#6ff7ff"/>
+      <stop offset="100%" stop-color="#0088ff"/>
+    </linearGradient>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="512" height="512" rx="96" fill="url(#bg)"/>
+  <path d="M78 382 256 76l178 306-178 62Z" fill="#03101d" stroke="url(#gold)" stroke-width="18" stroke-linejoin="round"/>
+  <path d="M158 348h196l-98 34Z" fill="#061e32" stroke="#d9a51d" stroke-width="10" stroke-linejoin="round"/>
+  <path d="M180 336V216c0-42 34-76 76-76s76 34 76 76v120" fill="#081827" stroke="url(#gold)" stroke-width="14"/>
+  <path d="M220 336V224c0-20 16-36 36-36s36 16 36 36v112Z" fill="#02070d" stroke="#1ce4ff" stroke-width="8" filter="url(#glow)"/>
+  <circle cx="256" cy="250" r="88" fill="none" stroke="url(#cyan)" stroke-width="10" opacity="0.95" filter="url(#glow)"/>
+  <path d="M256 170 278 250 256 330 234 250Z" fill="url(#gold)" stroke="#fff1a6" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M176 250 256 228 336 250 256 272Z" fill="#00cfff" opacity="0.72"/>
+  <circle cx="256" cy="250" r="14" fill="#fff6bd"/>
+  <path d="M112 395c44 29 92 43 144 43s100-14 144-43" fill="none" stroke="#19d8ff" stroke-width="8" stroke-linecap="round" opacity="0.7"/>
+</svg>

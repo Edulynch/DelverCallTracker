@@ -121,7 +121,7 @@ local function RestoreRouteOnce()
     end
 end
 
-eventFrame:SetScript("OnEvent", function(_, event, loadedAddon)
+eventFrame:SetScript("OnEvent", function(_, event, loadedAddon, ...)
     if event == "ADDON_LOADED" and loadedAddon == addonName then
         DCT.GetConfig()
         DCT.CreateUI()
@@ -149,7 +149,11 @@ eventFrame:SetScript("OnEvent", function(_, event, loadedAddon)
         wasShownBeforeCombat = false
     elseif event == "PLAYER_ENTERING_WORLD" or event == "ZONE_CHANGED" or event == "ZONE_CHANGED_NEW_AREA" or event == "ZONE_CHANGED_INDOORS" then
         if event == "PLAYER_ENTERING_WORLD" then
+            local isInitialLogin, isReloadingUi = loadedAddon, ...
             RestoreRouteOnce()
+            if isInitialLogin or isReloadingUi then
+                DCT.ApplyStartupVisibility()
+            end
         end
         DCT.ScheduleActiveRouteUpdate()
         local frame = DCT.GetFrame()
